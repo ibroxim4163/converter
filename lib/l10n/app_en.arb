@@ -1,0 +1,7 @@
+{
+    "title":"Currency Converter",
+    "subtitle":"Check live rates, set rate alerts, receive notifications and more.",
+    "amount":"Amount",
+    "converted_amount":"Converted Amount",
+    "rate":"Indicative Exchange Rate"
+}
