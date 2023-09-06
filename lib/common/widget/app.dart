@@ -24,10 +24,12 @@ class _AppState extends State<App> {
   late final Repository repository;
   late final TextEditingController controller1;
   late final TextEditingController controller2;
+  String firstRate="";
 
   List<CityModel> cities = [];
   void getAllCities() async {
     cities = await repository.getAllUser();
+    firstRate=(cities.first.rate! / cities[1].rate!) .toStringAsFixed(2);
     setState(() {});
   }
 
@@ -44,11 +46,12 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (BuildContext context) => LocalProvider(),
+      create: (context) => LocalProvider(),
       builder: (context, child) {
         final provider = Provider.of<LocalProvider>(context);
         return MyProvider(
           dataProvider: DataProvider(
+            firstRate:firstRate ,
             controller1: controller1,
             controller2: controller2,
             cities: cities,

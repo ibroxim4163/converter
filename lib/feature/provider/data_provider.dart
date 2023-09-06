@@ -5,6 +5,7 @@ import '../models/city_model.dart';
 class DataProvider with ChangeNotifier {
   final TextEditingController controller1;
   final TextEditingController controller2;
+  final String firstRate;
   final List<CityModel> cities;
   String selectedOne = "USD";
   String selectedTwo = "EUR";
@@ -13,7 +14,8 @@ class DataProvider with ChangeNotifier {
     required this.controller1,
     required this.controller2,
     required this.cities,
-  }) : rate = cities[1].rate.toString();
+    required this.firstRate,
+  }) : rate = firstRate;
 
   void onChangeFirst(String? currecy) {
     final number = num.tryParse(currecy!) ?? 0;
