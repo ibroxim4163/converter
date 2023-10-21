@@ -44,26 +44,6 @@ class _AppState extends State<App> {
           );
         }
       ),
-      // child: ChangeNotifierProvider(
-      //   create: (context) => LocalProvider(),
-      //   builder: (context, child) {
-      //     final provider = Provider.of<LocalProvider>(context);
-      //     return BlocProvider(
-      //       create: (context) => MainBloc(
-      //         RepositoryImp(
-      //           ApiService(),
-      //         ),
-      //       )..add(const LoadingEvent()),
-      //       child: MaterialApp(
-      //         locale: provider.locale,
-      //         localizationsDelegates: AppLocalizations.localizationsDelegates,
-      //         supportedLocales: AppLocalizations.supportedLocales,
-      //         debugShowCheckedModeBanner: false,
-      //         home: const MainPage(),
-      //       ),
-      //     );
-      //   },
-      // ),
     );
   }
 }
