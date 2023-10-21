@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:provider/provider.dart';
@@ -24,12 +23,12 @@ class _AppState extends State<App> {
   late final Repository repository;
   late final TextEditingController controller1;
   late final TextEditingController controller2;
-  String firstRate="";
+  String firstRate = "";
 
   List<CityModel> cities = [];
   void getAllCities() async {
     cities = await repository.getAllUser();
-    firstRate=(cities.first.rate! / cities[1].rate!) .toStringAsFixed(2);
+    firstRate = (cities.first.rate! / cities[1].rate!).toStringAsFixed(2);
     setState(() {});
   }
 
@@ -51,19 +50,14 @@ class _AppState extends State<App> {
         final provider = Provider.of<LocalProvider>(context);
         return MyProvider(
           dataProvider: DataProvider(
-            firstRate:firstRate ,
+            firstRate: firstRate,
             controller1: controller1,
             controller2: controller2,
             cities: cities,
           ),
           child: MaterialApp(
             locale: provider.locale,
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: L10n.all,
             debugShowCheckedModeBanner: false,
             home: const MainPage(),

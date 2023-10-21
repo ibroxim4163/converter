@@ -35,7 +35,8 @@ class RatePart extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "1 ${dataProvider.selectedOne} = ${dataProvider.rate} ${dataProvider.selectedTwo}",
+              "1 ${dataProvider.selectedOne} = ${dataProvider.rate}"
+              " ${dataProvider.selectedTwo}",
             ),
           ),
         )

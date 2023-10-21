@@ -30,7 +30,7 @@ class ApiService {
         Method.delete => delete(uri, headers: headers, body: body),
         Method.put => put(uri, headers: headers, body: body),
       }
-          .timeout(const Duration(seconds: 10));
+          .timeout(const Duration(minutes: 10));
       return switch (response.statusCode) {
         < 200 => throw Error.throwWithStackTrace(
             "${response.reasonPhrase}", StackTrace.current),
