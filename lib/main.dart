@@ -33,17 +33,15 @@ class _AppState extends State<App> {
           create: (context) => LanguageBloc(),
         )
       ],
-      child: Builder(
-        builder: (context) {
-          return MaterialApp(
-            locale: context.watch<LanguageBloc>().state.locale,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            debugShowCheckedModeBanner: false,
-            home: const MainPage(),
-          );
-        }
-      ),
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          locale: context.watch<LanguageBloc>().state.locale,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          debugShowCheckedModeBanner: false,
+          home: const MainPage(),
+        );
+      }),
     );
   }
 }

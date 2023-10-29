@@ -16,12 +16,14 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20),
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 20,
+      ),
       child: SizedBox(
         height: 45,
         width: 120,
         child: TextField(
-          
           style: const TextStyle(
             fontSize: 18,
             color: AppColors.blackColor,
@@ -30,12 +32,17 @@ class CustomTextField extends StatelessWidget {
           controller: controller,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(left: 10, right: 10),
+            contentPadding: const EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
             enabled: enabled,
             fillColor: AppColors.textFieldColor,
             filled: true,
             focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.textFieldColor),
+              borderSide: BorderSide(
+                color: AppColors.textFieldColor,
+              ),
               borderRadius: BorderRadius.all(
                 Radius.circular(10),
               ),

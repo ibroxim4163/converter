@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:homework/presentation/widgets/shimmer.dart';
 
 import '../../data/constants/app_colors.dart';
 import '../data/l10n/app_localizations.dart';
@@ -15,11 +17,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context);
     if (context.watch<MainBloc>().state is LoadingState) {
-      return const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
+      return const CustomShimmer();
     } else {
       return Scaffold(
         resizeToAvoidBottomInset: false,
