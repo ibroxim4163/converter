@@ -30,7 +30,10 @@ class RatePart extends StatelessWidget {
           ),
         ),
         BlocBuilder<MainBloc, MainState>(
-          buildWhen: (previous, current) => previous.rate!=current.rate,
+          buildWhen: (previous, current) {
+            return previous.secondCurrency != current.secondCurrency ||
+                previous.firstCurrency != current.firstCurrency;
+          },
           builder: (context, state) {
             return Padding(
               padding: const EdgeInsets.all(12),
